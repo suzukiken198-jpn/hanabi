@@ -92,7 +92,7 @@ It can be deployed directly to Vercel, GitHub Pages, Netlify, or similar static 
 
 ## ライセンス / License
 
-Copyright (c) 2026 Kenichi Suzuki
+Copyright (c) 2026 DIGITAL HANABI
 
 MIT License。詳細は [LICENSE](LICENSE) を確認してください。\
 MIT License. See [LICENSE](LICENSE) for the full text.
