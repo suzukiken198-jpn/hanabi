@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#050914" />
+    <title>DIGITAL HANABI — みんなでつくる、ひとつの夜空。</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="stage" aria-label="DIGITAL HANABI">
+      <canvas id="sky"></canvas>
+      <div class="atmosphere"></div>
+      <div class="horizon"><span></span><i></i><b></b></div>
+
+      <header class="topbar">
+        <div class="brand"><span class="brand-mark">✦</span><span>DIGITAL HANABI</span></div>
+        <div class="live-readout"><span class="live-dot"></span><span>LIVE</span><strong id="viewerCount">128</strong><span class="separator">·</span><span>TONIGHT</span><strong id="tonightCount">1,284</strong></div>
+        <button class="icon-button sound-button" id="soundButton" aria-label="音をオンにする"><span id="soundIcon" aria-hidden="true">🔊</span></button>
+      </header>
+
+      <section class="hero-copy" id="heroCopy">
+        <div class="launch-buttons"><button class="primary-button" id="openComposer"><span>連射花火を上げる</span><span class="button-arrow">↗</span></button><button class="primary-button mega-button" id="megaLaunch"><span>特大玉を打ち上げる</span><span class="button-arrow">↗</span></button></div>
+        <p class="hint">画面をタップして、夜空へ光を贈る</p>
+      </section>
+
+      <div class="side-note right-note">NO. <span id="fireworkIndex">0347</span><br /><small>OF TONIGHT'S LIGHTS</small></div>
+
+      <aside class="live-chat" aria-label="ライブチャット">
+        <div class="chat-head"><span><i class="live-dot"></i> LIVE CHAT</span><small>EPHEMERAL</small></div>
+        <p class="chat-notice">AIによるサクラコメントも混じっています。</p>
+        <div class="chat-messages" id="chatMessages"></div>
+        <form class="chat-form" id="chatForm"><input id="chatInput" maxlength="60" autocomplete="off" placeholder="夜空にメッセージを送る" /><button aria-label="送信">↗</button></form>
+      </aside>
+
+      <section class="composer" id="composer" aria-hidden="true">
+        <div class="panel-head"><div><p class="eyebrow">CREATE YOUR LIGHT</p><h2>あなただけの一発を。</h2></div><button class="close-button" id="closeComposer">×</button></div>
+        <div class="form-grid">
+          <div class="field"><label>COLOR <span id="colorLabel">GOLD</span></label><div class="swatches" id="colorOptions"></div></div>
+          <div class="field"><label>SHAPE <span id="shapeLabel">CHRYSANTHEMUM</span></label><div class="shape-options" id="shapeOptions"></div></div>
+          <div class="field scale-field"><label>SCALE <span id="scaleLabel">LARGE</span></label><div class="segmented" id="scaleOptions"><button data-value="small">SMALL</button><button data-value="medium">MEDIUM</button><button class="selected" data-value="large">LARGE</button></div></div>
+          <div class="field message-field"><label>MESSAGE <span>OPTIONAL / 30</span></label><input id="messageInput" maxlength="30" placeholder="夜空へ、ひとこと" /><div class="gift-line"><button id="giftToggle" class="gift-toggle" type="button">♡ プレゼント花火にする</button><input id="giftRecipient" class="recipient-input" maxlength="18" placeholder="贈る相手の名前" disabled /></div></div>
+        </div>
+        <div class="launch-row"><button class="secondary-button" id="scheduleButton">日時を指定 <span>＋</span></button><button class="launch-button" id="launchButton"><span>夜空へ打ち上げる</span><span>↗</span></button></div>
+        <p class="panel-foot">この夜空は、あなたと、いま参加している全員のものです。</p>
+      </section>
+
+      <div class="toast" id="toast"></div>
+      <div class="applause" id="applause">✦ <span>APPLAUSE</span></div>
+      <div class="finale" id="finale"><p class="eyebrow">THE NIGHT WE MADE TOGETHER</p><h2>THANK YOU</h2><p>この夜空をつくったのは、みんなです。</p></div>
+      <button class="art-mode-button" id="artModeButton">ART MODE ↗</button>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
